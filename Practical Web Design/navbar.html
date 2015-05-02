@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Navigation Bars</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Navigation Bars</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						How do you make navigation bars? It's pretty simple.
+					</p>
+					<p>
+						At a very basic level, navbars are nothing more than some words that are also a links. If you know the most basic level of using link tags, you can make a navigation system. I'll show you one solid clean way.
+					</p>
+					<p>
+						Generally there are two types of navigation on websites: Vertical and Horizontal Navigation. I'll show you a simple way to do both, starting with vertical:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+
+      &lt;ul&gt;
+         &lt;li class="navitem"&gt;Fish&lt;/li&gt;
+         &lt;li class="navitem"&gt;Minerals&lt;/li&gt;
+         &lt;li class="navitem"&gt;Balloon Hats&lt;/li&gt;
+         &lt;li class="navitem"&gt;Trumpets&lt;/li&gt;
+      &lt;/ul&gt;
+				
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.navitem {
+	background-color: cyan;
+	height: 25px;
+	width: 110px;
+	font-size: 20px;
+	padding-left: 10px;
+	
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example smaller"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<ul>
+						<li class="xnavitem">Fish</li>
+						<li class="xnavitem">Minerals</li>
+						<li class="xnavitem">Balloon Hats</li>
+						<li class="xnavitem">Trumpets</li>
+					</ul>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						So what's going on? At the base we have a list, &lt;ul&gt; is an unordered list element. Inside it are the four navigation words, each one of them is a &lt;li&gt; or list item. So it's just a list with four items. I've given the list items a class so we can use CSS to change how they look (class navitem).
+					</p>
+					<p>
+						So the HTML has already created a vertical list for me, it's what it does by default. Then we just changed the background color of each item to cyan and gave them a width and a height (navigation buttons should be easy to click). Next we made the font larger, and finally we added a bit of padding to the left side of each item. The padding adds 10px to the left, effectively pushing the text over a bit so it's not right up against the left edge of the page. Obviously you can edit these parameters however you like. Want giant pink 120px by 120px square navigation buttons? Go for it.
+					</p>
+					<p>
+						Ok, So now we have decent buttons, but they don't do anything. Let's make them into links:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+
+      &lt;ul&gt;
+         &lt;a href="http://www.google.com"&gt;&lt;li class="navitem"&gt;Fish&lt;/li&gt;&lt;/a&gt;
+         &lt;a href="http://www.facebook.com"&gt;&lt;li class="navitem"&gt;Minerals&lt;/li&gt;&lt;/a&gt;
+         &lt;a href="http://www.myspace.com"&gt;&lt;li class="navitem"&gt;Balloon Hats&lt;/li&gt;&lt;/a&gt;
+         &lt;a href="http://www.disneyland.com"&gt;&lt;li class="navitem"&gt;Trumpets&lt;/li&gt;&lt;/a&gt;
+      &lt;/ul&gt;
+				
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="onecol">
+					<p>
+						All that we've done here is to wrap each list item in a &lt;a&gt; (link) tag.
+					</p>
+					<p>
+						The href="" attribute is where we put the address of wherever we want the link to go (between the quotes). In this case I just put Google and Facebook etc. but you would add the adresses of your pages, or whatever you like.
+					</p>
+					<p>
+						So now your buttons should work as links, but they also probably look like this:<br /><br />
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<ul>
+						<a href="http://www.google.com"><li class="xnavitem xnavitem2">Fish</li></a>
+						<a href="http://www.facebook.com"><li class="xnavitem xnavitem2">Minerals</li></a>
+						<a href="http://www.myspace.com"><li class="xnavitem xnavitem2">Balloon Hats</li></a>
+						<a href="http://www.disneyland.com"><li class="xnavitem xnavitem2">Trumpets</li></a>
+					</ul>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						All that happened here is that there is a default color (blue) and underline on links. Since we probably don't want this in our navbar, all we have to do is remove it with this CSS:
+					</p>
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.navitem {
+	background-color: cyan;
+	height: 25px;
+	width: 110px;
+	font-size: 20px;
+	padding-left: 10px;
+	
+	color: black;
+	text-decoration: none;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example smaller"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<ul>
+						<a href="http://www.google.com"><li class="xnavitem">Fish</li></a>
+						<a href="http://www.facebook.com"><li class="xnavitem">Minerals</li></a>
+						<a href="http://www.myspace.com"><li class="xnavitem">Balloon Hats</li></a>
+						<a href="http://www.disneyland.com"><li class="xnavitem">Trumpets</li></a>
+					</ul>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						So we set the blue text color back to black, and removed the underline text decoration. Back to normal.
+					</p>
+					<p>
+						Great, so now we've got a completely functional vertical navbar! If you wanted to add more items you could just add more &lt;li&gt;'s wrapped in &lt;a&gt;'s just like the four previous ones.
+					</p>
+					<p>
+						So how do we make a horizontal navbar? Same way we make most other things that stack vertically stack horizontally. Just add one CSS line:
+					</p>
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.navitem {
+	background-color: cyan;
+	height: 25px;
+	width: 110px;
+	font-size: 20px;
+	padding-left: 10px;
+	color: black;
+	text-decoration: none;
+
+	display: inline-block;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example smaller"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<ul>
+						<a href="http://www.google.com"><li class="xnavitem ib">Fish</li></a>
+						<a href="http://www.facebook.com"><li class="xnavitem ib">Minerals</li></a>
+						<a href="http://www.myspace.com"><li class="xnavitem ib">Balloon Hats</li></a>
+						<a href="http://www.disneyland.com"><li class="xnavitem ib">Trumpets</li></a>
+					</ul>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Wow, that was sooooooo easy. If you wanted you could take this horizontal navbar and paste it right into the blue navbox spot on the standard page layout (copy the whole ul and li's inside it, and dont forget the "navitem" CSS rules), and it would work perfectly:<br /><br />
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;div class="midwrap"&gt;
+         &lt;div class="header"&gt;&lt;/div&gt;
+			
+         &lt;div class="navbox"&gt;
+            &lt;ul&gt;
+               &lt;a href="http://www.google.com"&gt;&lt;li class="navitem"&gt;Fish&lt;/li&gt;&lt;/a&gt;
+               &lt;a href="http://www.facebook.com"&gt;&lt;li class="navitem"&gt;Minerals&lt;/li&gt;&lt;/a&gt;
+               &lt;a href="http://www.myspace.com"&gt;&lt;li class="navitem"&gt;Balloon Hats&lt;/li&gt;&lt;/a&gt;
+               &lt;a href="http://www.disneyland.com"&gt;&lt;li class="navitem"&gt;Trumpets&lt;/li&gt;&lt;/a&gt;
+            &lt;/ul&gt;
+         &lt;/div&gt;
+				
+      &lt;/div&gt;
+	
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example small"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>					
+
+					<div class="threecol csscode">
+.navitem {
+	background-color: cyan;
+	height: 25px;
+	font-size: 20px;
+	padding-left: 20px;
+	width: 110px;
+	display: inline-block;
+}
+					</div>
+
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.header {
+	width: 1000px;
+	height: 120px;
+	background-color: green;
+}
+					</div>
+
+					<div class="threecol csscode">
+.navbox {
+	width: 1000px;
+	height: 40px;
+	background-color: blue;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						<div class="xheader"></div>
+						<div class="xnavbox">
+							<ul>
+								<a href="http://www.google.com"><li class="xnavitem ib">Fish</li></a>
+								<a href="http://www.facebook.com"><li class="xnavitem ib">Minerals</li></a>
+								<a href="http://www.myspace.com"><li class="xnavitem ib">Balloon Hats</li></a>
+								<a href="http://www.disneyland.com"><li class="xnavitem ib">Trumpets</li></a>
+							</ul>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Beautiful, you might want to adjust the size of the buttons to fit better, just a quick CSS edit of the .navitem will allow any kind of customizations you desire. The navbar is its own little self contained module. All you have to do is make a space for it and paste it in wherever.
+					</p>
+				</div>
+
+
+		
+			
+
+
+
+
+
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>

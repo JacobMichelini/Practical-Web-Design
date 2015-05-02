@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Aesthetics</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Aesthetics</h2>
+
+				<div class="onecol">
+					<p>
+						Alright, so now that you have a basic understanding of how to structure a functional page, it's time to make it look like a real page.
+					</p>
+					<p>
+						Basically this is all about just remembering a bunch of CSS properties that can be used to make a nice looking effect, so I'll just save you some time and list a bunch of them and how they can look. If you need more specific information on properties and what values they will accept, search the property on W3schools.com.
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Box Styling</h2>
+
+				<div class="onecol">
+					<p>
+						Here are the properties that can effect a block element like a div.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Background Color</h3>
+				
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">background-color: red;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="aesredbox"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Simple, Changes the background color of the box. Can enter the value in basic named colors like red/blue, hex values like #E32020, or RGB values like rgb(255,0,0).
+					</p>
+				</div>
+
+				<h3 class="subtitle">Background Image</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">background-image: url(wood.jpg);</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div style="height:100px;width:100px;background-image:url(wood.jpg);margin-left:8px;margin-top:8px;"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Sets the background to a picture, in this case wood.jpg located in the same folder as the CSS file. This effect is used to create very slick looking webpages when each div has a custom created image skinned onto it. It's all down to your photoshop and art skill at this point. You can use images with transparency in them for cool effects such as making the box appear to not be rectangular.
+					</p>
+				</div>
+				
+				<h3 class="subtitle">Borders</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">border: 2px solid black;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div style="height:100px;width:100px;background-color:red;margin-left:8px;margin-top:8px;border:2px solid black;"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Adds a border. The first value in the CSS is the border's width, the second is the style (there are a few options such as solid, dotted etc), and the third is the color of the border. Borders can also be applied only to certain side of the element with border-left, border-right, etc.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Rounded Corners</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">border-radius: 10px</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div style="height:100px;width:100px;background-color:red;margin-left:8px;margin-top:8px;border-radius:10px;"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Rounds the corners of a box. Values can be in pixels or in percentages. A value of 50% will turn a square into a circle, although keep in mind that it will only look like a circle, it will still be a box for document flow purposes.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Box Shadows</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">Box-shadow: 2px 2px 5px 0px black;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div style="height:100px;width:100px;background-color:red;margin-left:8px;margin-top:8px;box-shadow:2px 2px 5px black;"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Adds a shadow. The first value moves the shadow horizontally. The second Value moves the shadow vertically. The third value is blur amount (higher is more blur). The fourth value expands or contracts the shadow (you can leave this out if you don't need it). The fifth is the shadow's color. You can add the property "inset" after the color to change the shadow from outside the box to inside it. Shadows are a very flexible tool for a huge amount of effects. With some creativity you can make them into a glowing effect with a light color, or make a blurry effect with a visible shadow for a transparent box, or all sorts of things. If you set the blur to zero you can even use them to create fake boxes. 
+					</p>
+				</div>
+
+				<h3 class="subtitle">Tilting</h3>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">transform: rotate(15deg);</span>
+	<span class="highlight">-ms-transform: rotate(15deg);</span>
+	<span class="highlight">-webkit-transform: rotate(15deg);</span>
+	
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div style="height:100px;width:100px;background-color:red;margin-left:8px;margin-top:8px;-ms-transform: rotate(15deg);
+	-webkit-transform: rotate(15deg);transform:rotate(15deg);"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Rotates any element. May not work on older browsers. You must use all three lines for the effect to be compatible with IE, Chrome, and Firefox etc. Keep in mind that the element only looks rotated, it is still in its origninal position for box model purposes.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Opacity</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.box {
+	height: 100px;
+	width: 100px;
+	margin-left:8px;
+	margin-top:8px;
+
+	<span class="highlight">opacity: .6;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div style="height:100px;width:100px;background-color:red;margin-left:8px;margin-top:8px;opacity:.6;"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						This will make your element tranparent. Obnoxiously it will also make all elements inside the element also transparent, so making solid black text inside  a partially transparent div will not work. To achieve that kind of effect you can try using a background color in RGB with an alpha channel, or using a partially transparent background-image, among other tricks. 
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Inline Styling (Text)</h2>
+
+				<div class="spacer"></div>
+
+				<h3 class="subtitle">Color</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">color: red;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="color:red;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Changes text color. Can enter the value in basic named colors like red/blue, hex values like #E32020, or RGB values like rgb(255,0,0).
+					</p>
+				</div>
+
+				<h3 class="subtitle">Lines</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">text-decoration: underline;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="text-decoration:underline;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Adds a decoration line to text, can be overline, underline, or line-through.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Bold</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">font-weight:bold;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="font-weight:bold;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Bolds text, can be defined as normal, bold, or bolder, can also be specified as a value from 100 to 900.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Italics</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">font-style:italic;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="font-style:italic;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Italicizes text. To italicize a single word you can surround the word in &lt;span class="italic"&gt;&lt;/span&gt; tags that have been given the italic property.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Text-Shadow</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">text-shadow: 2px 2px 5px black;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="text-shadow: 2px 2px 5px black;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Gives text a shadow. Exactly the same as box-shadow but a bit less options. First value is horizontal, second is vertical, third is blur amount, fourth is color.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Text Center</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">text-align: center;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="text-align: center;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Sets the text to align either left (normal), right, or center. Handy. Remember, this is aligning relative to whatever the text is inside.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Letter Spacing</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">letter-spacing: 10px;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="letter-spacing:10px;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Sets gaps between letters. Negative values are allowed. Can be useful for big banners.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Line-Height</h3>
+
+				<div class="example smallest"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.text {
+	font-family: Verdana, sans-serif;
+	font-size: 24px;  
+
+	<span class="highlight">line-height: 40px;</span>
+}
+					</div>
+				</div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p style="line-height:40px;font-size:24px;font-family:Verdana,sans-serif;">Helicopter teleporter badger captor.<br />Helicopter teleporter badger captor.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Sets gaps between lines. Can be a set pixel value or a percentage based on the font size.
+					</p>
+				</div>
+
+				<h3 class="subtitle">Font</h3>
+
+				<div class="spacer"></div>
+				<div class="spacer"></div>
+
+				<div class="example smallest"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+				<div class="spacer"></div>
+					<a href="font.html">See Article on Font---></a>
+				</div></div>
+
+
+
+
+
+				
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>

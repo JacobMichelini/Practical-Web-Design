@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Standard Webpage</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Standard Page Layout</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						Since we are all about functionality here, let's use some basic skills to make a basic website layout. It's going to have a header, a content area, and a navigation area.
+					</p>
+					<p>
+						If you look at 99% of websites, you'll notice that they consist of a vertical column of content with margins on both sides. This is so they can be viewed on a variety of screen and window sizes. If you make your window smaller, most sites will automatically shrink those side margins so you can still see the main content. 
+					</p>
+					<p>
+						Lets create this. Its very simple. Start with this HTML and CSS:
+					</p>
+				</div>
+			
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+   &lt;/head&gt
+
+   &lt;body&gt
+		
+      &lt;div class="midwrap"&gt
+
+      &lt;/div&gt
+	
+   &lt;/body&gt
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Great. If you need an explanation, all we did was create a content area 1000 pixels wide. Then we colored it red. 
+					</p>
+					<p>
+						In order to center it, we set its margins to auto, which makes the margins equal on both sides. If you resize this window you'll see that the red content area stays centered in the viewport.
+					</p>
+					<p>
+						The last thing is sort of optional. Since we didn't specify a height attribute, the red divs heigh would expand to fit whatever we put inside it. If there was nothing inside it like right now, it would have zero height and be invisible. Most of the time you want your content area to at minimum go to the bottom of the page, and then expand longer if the content goes on for more than that page. To achieve this we need to set our red areas minimum height to 100% (of whatever element it's inside). Unfortunately, it's inside the body and html elements, which also don't have a specified height. So we have to write a quick CSS rule to set them both to 100% as well first. Now the our red box will never be shorter than the viewport, but can expand longer automatically if we have tons of content inside it.
+					</p>
+					<p>
+						Ok, lets move on to the next step and add a heading area for our website title at the top. It's actually going to go inside the content area like this:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+		
+      &lt;div class="midwrap"&gt;
+         &lt;div class="header"&gt;&lt;/div&gt; 
+      &lt;/div&gt;
+	
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example small"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.header {
+	width: 1000px;
+	height: 120px;
+	background-color: green;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						<div class="xheader"></div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						According to the basic rules of HTML/CSS, the green header was placed in the top left corner of the red content area. Since it is 1000px wide it fills the whole width. The nice part is because it is inside the red content area, it will move when the red area moves just like if it was a real object inside a box. So if we resize the width of our screen, the red area AND the green header will stay centered in the viewport.
+					</p>
+					<p>
+						Ok, let's make a basic top navigation area next. It's going to sit directly under the green header inside the red content area. If you were following before you should already ba able to see just how easy this is going to be to create. its exactly the same as the green header box, but underneath it and with less height. Here's the HTML and CSS:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+		
+      &lt;div class="midwrap"&gt;
+         &lt;div class="header"&gt;&lt;/div&gt; 
+
+         &lt;div class="navbox"&gt;&lt;/div&gt; 
+      &lt;/div&gt;
+	
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+								<div class="plus-sign"></div>
+
+				<div class="example small"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.header {
+	width: 1000px;
+	height: 120px;
+	background-color: green;
+}
+					</div>
+
+					<div class="threecol csscode">
+.navbox {
+	width: 1000px;
+	height: 40px;
+	background-color: blue;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						<div class="xheader"></div>
+						<div class="xnavbox"></div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Wow, there we go. Same as the green header, the blue navbox is just a 1000px by 40px div placed inside the red midwrap. Due to the basic rules of HTML its placed in the top left corner of the red area, below any elements before it. EZ.
+					</p>
+					<p>
+						There you have it, a basic website layout in like five minutes. If you write text in the green header div, it will automatically be placed in that area. If you write text in the blue navbox area it will go in that area, and if you write text in the red area below those two, it will go below them in the red content area. Like this:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+		
+      &lt;div class="midwrap"&gt;
+         &lt;div class="header"&gt;my website&lt;/div&gt; 
+
+         &lt;div class="navbox"&gt;navigation bar here plz&lt;/div&gt;
+         this is where i write about my feelings 
+      &lt;/div&gt;
+	
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						<div class="xheader">my website</div>
+						<div class="xnavbox">navigation bar here plz</div>
+						this is where i write about my feelings
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Sweet, all we need to do to make this a legitimate page is to pretty it up with some more CSS and maybe learn how to make columns. I'll show you how.
+					</p>
+				</div>
+
+
+
+
+
+
+
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Columns</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Columns</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						It might not seem like it, but columns are actually a really important and basic thing you need to know how to do. If you want any sort of layout that involves vertical divisions you are using a type of column.
+					</p>
+					<p>
+						There area actually several ways to get columns, but I'm going to be showing you what I find the simplest and easiest. We'll start with a centered contect area that we will then be putting our columns inside:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+   &lt;/head&gt
+
+   &lt;body&gt
+		
+      &lt;div class="midwrap"&gt
+
+      &lt;/div&gt
+	
+   &lt;/body&gt
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Ok we've done that before, not we'll add two side by side columns in it. We'll start with two divs that will be these columns:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+   &lt;/head&gt
+
+   &lt;body&gt
+		
+      &lt;div class="midwrap"&gt
+         &lt;div class="twocol"&gt;&lt;/div&gt;
+         &lt;div class="twocol"&gt;&lt;/div&gt;
+      &lt;/div&gt
+	
+   &lt;/body&gt
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.twocol {
+	min-height: 100px;
+	width: 494px;
+	background-color: blue;
+	margin-left: 4px;
+	float: left;
+}
+					</div>
+
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						<div class="xtwocol"></div>
+						<div class="xtwocol"></div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						So whats going on here? First of all we have two blue divs with widths of 494px and a height that is a minimum of 100px, so we can see them, but they will expand with the content because we haven't given them a set height. 
+					</p>
+					<p>
+						They have a margin of 4px on their left side to prevent them from going right up to the edges of their container. Why 494px columns and 4px margins? Just basic math. If there are going to be two columns, we wan't an equal margin on the left side of the two columns, between the two columns, and on the right side of the two columns. That's three margins. Our two columns are 494px each, or 12px less than the full width of 1000px when combined. Divide that 12 left over pixels into three even margins and you get 4px per margin. Obviously this can be adjusted for larger or smaller margins, as long as the math works out evenly.
+					</p>
+					<p>
+						The float left is important. If you leave it out when you add content, the columns may drop below each other on the page. Why exactly does this fix that issue? Why do they line up properly and then drop when you add text to them? I don't know exactly, but it does. Just leave it in and you're good to go.
+					</p>
+					<p>
+						So there we have our two column layout. To add content to the left column simply put it in the first "twocol" div, to add it to the right one just add it to the second. So lets now extrapolate this process to three columns and on to infinity. It's done in exactly the same way:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+   &lt;/head&gt
+
+   &lt;body&gt
+		
+      &lt;div class="midwrap"&gt
+         &lt;div class="threecol"&gt;&lt;/div&gt;
+         &lt;div class="threecol"&gt;&lt;/div&gt;
+         &lt;div class="threecol"&gt;&lt;/div&gt;
+      &lt;/div&gt
+	
+   &lt;/body&gt
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.midwrap {
+	min-height: 100%;
+	width: 1000px;
+	background-color: red;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.threecol {
+	min-height: 100px;
+	width: 328px;
+	background-color: blue;
+	margin-left: 4px;
+	float: left;
+}
+					</div>
+
+					<div class="threecol csscode">
+html {
+	height: 100%;
+}
+					</div>
+
+					<div class="threecol csscode">
+body {
+	height: 100%;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xmidwrap">
+						<div class="xthreecol"></div>
+						<div class="xthreecol"></div>
+						<div class="xthreecol"></div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Exact same idea except instead of two column divs, there are three. They are also smaller. To get even 4px margins on a three column layout we need a bit more math. Three columns means four gaps or margins. One between the container left and the first column, one between the first and second, one between the second and third, and one between the third and the right side of the container. If you allocate 4px to each one, you get 16px reserved for margins. 1000px-16px is 984px available for your three columns, so just divide that by three to get your widths (328px).
+					</p>
+					<p>
+						I think you should get the idea by now, this method can be used to create any number of columns easily.
+					</p>
+				</div>
+
+
+
+
+
+				
+				
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>

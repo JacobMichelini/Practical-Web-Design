@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Font</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Nice Font</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						What makes webpages look professional and not like something a high-school student made in computer lab? A lot of things, but using a font that isn't awful is a big one. 
+					</p>
+					<p>
+						Changing fonts is easy, all you need is a line of CSS like this:
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.paragraph {
+	font-family: Helvetica, sans-serif;
+	font-size: 20px;
+	color: black;
+}
+					</div>
+				</div>
+
+				<div class="onecol">
+					<p>
+						This would effect the font for an element we gave the class "paragraph" (probably &lt;p class="paragraph"&gt)
+					</p>
+					<p>
+						First it would set the font as Helvetica, then as a fall-back use any san-serif font if the computer didn't have Helvetica installed. Then set font size to 20px. Then set the font color to black. Very very dead simple. Unfortunately, most of the fonts that come installed on nearly every computer are either extremely hideous, or very dated. If we tried to use a more modern font with just this method, most computers won't have it installed, and therefore it will default to something ugly. So we need to have our nice new font added as part of the website so users will automatically have it available.
+					</p>
+					<p> 
+						There are two methods to doing this:<br />
+						1. Link to the font hosted somewhere else (like google webfonts)<br />
+						2. Host the font ourselves.
+					</p>
+					<p>
+						Both take about two lines of code. Lets start with the first.
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">1. External Hosted Webfonts</h2>
+
+				<div class="onecol">
+					<p>
+						First we head over to pick a font. So go on over to google.com/fonts.
+					</p>
+					<p>
+						Then simply wander around until you find one to your liking. Let's use "Lobster" for this example, as it will be easy to see when it works. Next we click the little right facing arrow button under it labeled Quick-use. This will open the specific font, then scroll down until you see the "add this code to your website". This single line will need to be added to our HTML. You will put it under the stylesheet links. It will look like this in our basic template: 
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+      <span class="highlight">&lt;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&gt</span>
+   &lt;/head&gt
+
+   &lt;body&gt
+
+   &lt;/body&gt
+
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="onecol">
+					<p>
+						Great, now that we've linked to the font in the HTML, we can now use it freely in our CSS. All we need to do to set a paragraph to use Lobster is know its specific name. This information is also on the Quick-use page as step four. In this case the font is simply called Lobster.
+					</p>
+					<p>
+						So using Lobster for a paragraph would look like this:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+      <span class="highlight">&lt;link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'&gt</span>
+   &lt;/head&gt
+
+   &lt;body&gt
+      <span class="highlight">&lt;p class="lobster"&gt
+         This is text that will be in "Lobster" font. An alligator escaped angry arson allegations.
+      &lt;/p&gt</span>
+   &lt;/body&gt
+
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.lobster {
+	font-family: 'Lobster', cursive;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example smaller"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p class="xlobster">This is text that will be in "Lobster" font. An alligator escaped angry arson allegations.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Ok, so that's the first method. You can do as many fonts like that as you want. This method is slightly faster and easier than the second method, but you have a much more limited font selection. Now let's move on the the second method.
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">2. Internal Hosted Font</h2>
+
+				<div class="onecol">
+					<p>
+						First we head over to pick a font. So go on over to Dafont or Fontsquirrel.
+					</p>
+					<p>
+						Dafont is cool so lets use that. For my example lets just use the font from Transformers. You can search for it. It's called Transformers Movie. Then simply download and unzip the font. 
+					</p>
+					<p>
+						The unzipped font folder should have several files in there, the ones we are concerned with are the actual font files, which are .ttf or .otf files (TrueType or OpenType). In this case there is Transformers Movie.ttf. Copy that file and let's just put it right in the CSS folder in our blank template. 
+					</p>
+					<p>
+						Now we have to write two lines of CSS to make that font work for our paragraph:
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+@font-face {
+	font-family: Transformers;
+	src: url("Transformers Movie.ttf") format("truetype");
+}
+					</div>
+
+					<div class="threecol csscode">
+.transformers {
+	font-family: 'Transformers', Sans-serif;
+}
+					</div>
+				</div>
+
+				<div class="onecol">
+					<p>
+						The first one is giving this new font a name, and then telling the computer to associate that name with the font file we just downloaded. In this case we gave it the name "Transformers", and then we told the computer that the font file associated with that name was "Transformers Movie.ttf" located in the same folder as the CSS file, and that that file is truetype. Got that? The important part is that the url() points to the file path of the font file.
+					</p>
+					<p>
+						The second line is just us now using our new font on our paragraph by referencing the name we just gave it (Transformers). We also set a fallback to any san-serif font just in case something goes wrong with the transformers one. You can now use 'Transformers' font on any element you want. You only need a single @font-face rule per font to make it work.
+					</p>
+					<p>
+						So in a general overview here is what we need for method two:
+					</p>
+				</div>
+
+						<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt
+&lt;html&gt
+   &lt;head&gt
+      &lt;meta charset=utf-8 /&gt
+      &lt;title&gt;My Website&lt;/title&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt
+   &lt;/head&gt
+
+   &lt;body&gt
+      <span class="highlight">&lt;p class="transformers"&gt
+         This is text that will be in "Transformers" font. An alligator escaped angry arson allegations.
+      &lt;/p&gt</span>
+   &lt;/body&gt
+
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p class="center">
+						The font file "Transformers Movie.ttf" in our CSS folder.
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+@font-face {
+	font-family: Transformers;
+	src: url("Transformers Movie.ttf") format("truetype");
+}
+					</div>
+
+					<div class="threecol csscode">
+.transformers {
+	font-family: 'Transformers', Sans-serif;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example smaller"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<p class="xtransformers">This is text that will be in "Transformers" font. An alligator escaped angry arson allegations.</p>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Well there you have it. Both are pretty damn quick and easy.
+					</p>
+					<p>
+						Method one is slightly easier, method two will allow you to use a much greater variety of fonts. Use whichever you need. Keep in mind that using thirty-five special fonts on your site will slow down loading speed, so keep it minimal.
+					</p>
+				</div>
+
+
+
+
+
+
+				
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>

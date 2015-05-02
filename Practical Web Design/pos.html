@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Basic Box Model</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+				
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Basic Box Model</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						Basic positioning is probably the most important thing you need to know to actually go about making a usable webpage. It can be a bit confusing, but if we simplify it down considerably, you should be able to use it effectively in no time at all.
+					</p>
+					<p>
+						The first thing you need to learn is the box model. In short, whenever you created an HTML element, the computer is interpreting it as a box. Everything is a box. Webpages are just a big box with smaller boxes inside of them with boxes inside of those too. Some of the boxes are invisible and just serve as a frame, some are visible and are prettied up to contain the content.
+					</p>
+					<p>
+						To visualize this, lets look at a really simple example:
+					</p>
+				</div>
+				
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;div class="redbox"&gt;&lt;/div&gt;
+   &lt;/body&gt;
+
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="onecol">
+					<p>
+						This is your HTML code. All we have here is your simple blank HTML template, and we've added a div called "redbox" in the body. As we've just learned, the div is now a box.
+					</p>
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.redbox {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+					</div>
+				</div>
+
+				<div class="onecol">
+					<p>
+						And here is your very simple CSS. All we have done is given the div a height and width of 100 pixels, and colored it red. So does it look like a 100px by 100px red box?
+					</p>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example small"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="redbox"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Yes indeed, that's exactly what we see when we view it in the browser. Notice where the box is positioned in the top left corner. This is where each element will be placed by default, the top left corner of the element they are inside. In this example the redbox div is inside the body element, so it is placed in the top left corner of the body.
+					</p>
+					<p>
+						Let's add another box. This time we'll add a bluebox inside the red box. Here is our HTML:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+		
+      &lt;div class="redbox"&gt;
+         &lt;div class="bluebox"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+	
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="onecol">
+					<p>
+						There we go, bluebox is inside the redbox. Then we just add a CSS rule to give our bluebox a color and a size:
+					</p>
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.redbox {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+					</div>
+
+					<div class="threecol csscode">
+.bluebox {
+	height: 50px;
+	width: 50px;
+	background-color: blue;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example small"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="redbox">
+						<div class="bluebox"></div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						And our expected result. The bluebox is placed in the top left corner of the redbox.
+					</p>
+					<p>
+						Ok. Thats really simple. So what happens when we put a green box not inside redbox or bluebox, but just in the body with them? Let's try it:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+		
+      &lt;div class="redbox"&gt;
+         &lt;div class="bluebox"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class="greenbox"&gt;&lt;/div&gt;
+	
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.redbox {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+}
+					</div>
+
+					<div class="threecol csscode">
+.bluebox {
+	height: 50px;
+	width: 50px;
+	background-color: blue;
+}
+					</div>
+
+					<div class="threecol csscode">
+.greenbox {
+	height: 100px;
+	width: 100px;
+	background-color: green;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example small"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="redbox">
+						<div class="bluebox"></div>
+					</div>
+					<div class="greenbox"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Well there you go, it's placed directly below the previous elements. If we put five more divs in, they would each take up a line and they would stack up like a little multicolored tower.
+					</p>
+					<p>
+						So what if we want our elements to line up horizontally? All you need to do is add a line to your CSS:
+					</p>
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.redbox {
+	height: 100px;
+	width: 100px;
+	background-color: red;
+	display: inline-block;
+}
+					</div>
+
+					<div class="threecol csscode">
+.bluebox {
+	height: 50px;
+	width: 50px;
+	background-color: blue;
+}
+					</div>
+
+					<div class="threecol csscode">
+.greenbox {
+	height: 100px;
+	width: 100px;
+	background-color: green;
+	display: inline-block;
+}
+					</div>
+				</div>
+
+				<div class="onecol">
+					<p>
+						Just add "display: inline-block;" to the two boxes you want to line up horizontally.
+					</p>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example small"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="redbox inlineblock">
+						<div class="bluebox"></div>
+					</div>
+					<div class="greenbox inlineblock"></div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						There you go. Now you know how divs will be placed normally, and how to make them line up horizontally. if you were wondering about the 4 pixel gap in between the inline-block boxes, it's an obnoxious HTML/CSS oddity. Google it if you need to remove it. There are several methods.
+					</p>
+					<p>
+						This simple behavior is the basis of all web design. It allows you to build websites easily by essentially plugging in little modules that will automatically be placed below the previous module, or to the right of the previous module. If we put text in our inline-block redbox and greenbox, then this could be a basic two column layout. Or we could put our title in the regular redbox and the articles in greenbox to make a tiny little webpage. We could even keep updating the page by just adding more greenboxes with more articles. Easy. 
+					</p>
+				</div>
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>

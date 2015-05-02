@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8 />
+		<title>PWD Positioning</title>
+		<link type="text/css" rel="stylesheet" href="css/reset.css"/>
+		<link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/>
+		<meta name="author" content="Jacob Michelini">
+		<link rel="shortcut icon" href="favicon.ico">
+		<meta name="keywords" content="Jacob Michelini Webdesign Web-Design HTML CSS Practical Easy Usable Learn Tutorial Teach"> 
+        <meta name="description" content="Really easy to follow practical instruction for making a real website."> 
+	</head>
+
+	<body>
+
+<!-- Main Content -->
+		<div class="fullwrap">
+			<div class="header title">Practical Web-Design</div>
+			<!-- End Header -->
+			<div class="midwrap">
+
+				<div class="spacer"></div>
+
+				<h2 class="subtitle">Element Positioning: Relative and Absolute</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						After you understand the basics of the box model, there is one more thing you need to know to be able to position the elements on your sites properly. This is the position CSS property.
+					</p>
+					<p>
+						This is probably the hardest part of web design to understand, it's just convoluted and a bit weird. There is no really elegant easy way to present it, you you will actually have to read through this pretty carefully. Before we start I want to reiterate what I discussed about basic box model positioning (things going in the top left of the element they are inside etc.), that all still applies here. What these positioning states do then modifies that basic position.
+					</p>
+					<p>
+						There are three positioning states we will be going over that are commonly used:
+					</p>
+					<p class="white">
+						<span class="highlight">1. Static </span><br /><br />
+						This is the default positioning state. If you make an element and do not specify a "position:", then the element is static. All the elements we just messed with were static, as we did not specify otherwise. We already saw how static elements are positioned in the basic box model tutorial. Nothing special here. It's just important to understand that this positioning exists apart from the other two we will mention.
+					</p>
+
+					<p class="white">
+						<span class="highlight">1. Relative</span><br /><br />
+						Relative positioning allows you to change where an element is placed <em>relative to where it would be normally with static (default) positioning</em>. Namely you can use the left, right , top, and bottom commands to move the element a certain distance in those directions. I will go into detail on this.
+					</p>
+
+					<p class="white">
+						<span class="highlight">1. Absolute</span><br /><br />
+						This is big. Absolute positioning will <em>remove the element from the document flow</em>. Basically no other element will interact with it, its like a ghost element. You can still see it and everything, but nothing will stack on it, and it wont stack on anything. If you put one in a box it will go to the top left corner no matter if there is already something already there or not, it'll just go right over it. <em>You can still use the left, right, top, and bottom commands to move an absolutely positioned element, but they will move the absolute object relative to the first non-static element the absolute element is inside.</em> I will go into detail on this.
+					</p>
+					<p> 
+						That probably sounds confusing, so lets start at a basic level and see practical examples of the behavior.
+					</p>
+				</div>
+
+				<h2 class="subtitle">Relative Positioning</h2>
+
+				<div class="spacer"></div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;div class="container"&gt;	
+         &lt;div class="redbox"&gt;
+            &lt;div class="bluebox"&gt;&lt;/div&gt;
+            &lt;div class="greenbox"&gt;&lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="onecol">
+					<p>
+						This is going to be our basic test layout. It is composed of a grey centered content area ("container"), containing a medium size red box ("redbox"), which in turn contains a small blue box ("bluebox"), and a small green box ("greenbox").
+					</p>
+
+					<p>
+						We have some very basic CSS rules set up to give our elements dimensions and colors, and even margins on both sides to center the container:
+					</p>
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.container {
+	height: 500px;
+	width: 600px;
+	background-color: dimgrey;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.redbox {
+	height: 300px;
+	width: 300px;
+	background-color: red ;
+}
+					</div>
+
+					<div class="threecol csscode">
+.bluebox {
+	height: 100px;
+	width: 100px;
+	background-color: blue ;
+}
+					</div>
+
+					<div class="threecol csscode">
+.greenbox {
+	height: 100px;
+	width: 100px;
+	background-color: green ;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox">
+							<div class="xbluebox"></div>
+							<div class="xgreenbox"></div>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Now let's begin moving things around. To begin we must first assign the element we are moving "position:relative". First we are going to move the green box, so we add "position: relative" to the CSS for that element. Then we move it. We will be moving the green box 20px to the right. This is done with the command, "left:20px". 
+					</p>
+					<p>
+						Why the hell is it left to move right? The way this command works is that it pushes the element the stated number of pixels AWAY from the left side of their original position. So the command "left:20px" pushes the element AWAY from the left side 20px. The command "top:20px" would push the element 20px AWAY from the top side of it original position.
+					</p>
+					<p>
+						So here is the revised CSS for greenbox and the result:
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.greenbox {
+	height: 100px;
+	width: 100px;
+	background-color: green ;
+	position: relative;
+	left: 20px;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox">
+							<div class="xbluebox"></div>
+							<div class="xgreenbox xrelative xleft20">Left:20px</div>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Ok, that's simple enough. Lets move the red box next, 20px left. Same CSS changes.
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.redbox {
+	height: 300px;
+	width: 300px;
+	background-color: red ;
+	position: relative;
+	left: 20px;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox xrelative xleft20">
+							<div class="xbluebox"></div>
+							<div class="xgreenbox xrelative xleft20">Left:20px</div>
+							Left:20px
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						The thing to notice here is that all the elements inside the red box have also been moved when the red box was, just like if you moved a box with objects inside it in real life.
+					</p>
+					<p>
+						The other important thing to recognize is that the elements we "moved" haven't actually moved. They are just displaying in a different place. For box model purposes they are still in their original position. For example if we move the blue box up 20px, the green box will stay in exactly the same place. The blue box is displaying 20px higher, but it is in the same place for stacking and document flow purposes. Moving an element in this way will only effect elements inside it, not elements it just contacts.
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox xrelative xleft20">
+							<div class="xbluebox xrelative xtop-20">Top:-20px</div>
+							<div class="xgreenbox xrelative xleft20">Left:20px</div>
+							Left:20px
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Relative positioning isn't too hard. As long as you remember it moves objects relative to how they would be placed by default, and that it just effects where elements display, they still occupy the space they would be under default (static) positioning. For example if you have text surrounding an image and you move it left, the text will not fill the area where it used to be.
+					</p>
+					<p>
+						Let's move on to absolute positioning. First lets reset our testing template back to its original state (just delete all the left, right, top, bottom rules and the position:relative ones you just added in your CSS). Should look like this again:
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox">
+							<div class="xbluebox"></div>
+							<div class="xgreenbox"></div>
+						</div>
+					</div>
+				</div></div>
+
+				<h2 class="subtitle">Absolute Positioning</h2>
+
+				<div class="spacer"></div>
+
+				<div class="onecol">
+					<p>
+						Absolute positioning is significantly more drastic in effect, and stranger, than relative. So bear with me and read slowly.
+					</p>
+					<p>
+						First of all let's demonstrate what happens to an element when you just add "position:absolute" to it. Let's do it to the green box:
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.greenbox {
+	height: 100px;
+	width: 100px;
+	background-color: green ;
+	position: absolute;
+}
+					</div>
+				</div>
+
+				<div class="onecol">
+					<p>
+						The result? It should do nothing. What we just did was remove greenbox from the document flow, which had no visible effect because nothing was stacked on it, and we didn't move it at all, so it just stayed in the same position it was before.
+					</p>
+					<p>
+						If we add the same line to blue box though, we will get an effect. With bluebox set to position:absolute, this should be the result:
+					</p>
+				</div>
+
+				<div class="spacer"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox">
+							<div class="xbluebox xabsolute"></div>
+							<div class="xgreenbox xabsolute"></div>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Where did bluebox go? It's actually in the exact same spot it was before. Setting it to "position:absolute" removed it from the document flow (essentially turning it into a "ghost element"), and once it was "intangible", the green box "fell" right through it and is now covering it up. Blue is still right there, green is just in front of it.
+					</p>
+					<p>
+						Ok, so that "intangibility" is the first property of absolute positioning, and it's an incredibly useful one. Anytime you want an element to NOT interact with other elements near it (like maybe a dropdown menu or a picture in the foreground), setting that element to absolute is a good way to accomplish that.
+					</p>
+					<p>
+						The second property of absolute postioning is how movement commands work in it (left, right, top, bottom). This is the confusing part. A command of "left:20px" will not move an absolute element away from its default left side 20px like it would for a relative element. <em>It will move the element 20px away from the left side of the first absolute or relatively positioned element that the absolute element is inside.</em> Yes that is hard to grasp on first reading.
+					</p>
+					<p>
+						Lets see it in action and understand it that way. Add the line "left:20px" to the bluebox which is currently hiding behind greenbox.
+					</p>
+				</div>
+
+				<div class="example smaller"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.bluebox {
+	height: 100px;
+	width: 100px;
+	background-color: blue ;
+	position: absolute;
+	left: 20px;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox">
+							<div class="xbluebox xabsolute xleft20">Left:20px</div>
+							<div class="xgreenbox xabsolute"></div>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						Why is the bluebox now all the way out there 20px from the left edge of the screen? Well when you told it "left:20px" it starts checking the elements bluebox is inside to find the first relative or absolutely positioned one. First it checks redbox, nope, it isn't (it's static because we didn't specify any differently), then it checks the grey container, nope, same deal. After that there are no more containing elements (except technically the body and html elements), so it just places blue box 20px from the left of the viewport. You'll notice if you resize the window horizontally that the bluebox will stay always 20px from the left side.
+					</p>
+					<p>
+						So lets change that. We want blue box 20px from the left side of redbox. How is this done? All we need to do is set redbox to either "position:absolute" or "position:relative". Now when the computer check the elements bluebox is inside to find the first relative or absolute one, it will immediately see redbox, and set bluebox to be 20px from the left side of that. Here is our full code:
+					</p>
+				</div>
+
+				<div class="example"><div class="codetitle">HTML</div>
+					<div class="code">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+   &lt;head&gt;
+      &lt;meta charset=utf-8 /&gt;
+      &lt;title&gt;My Website&lt;/title&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/reset.css"/&gt;
+      &lt;link type="text/css" rel="stylesheet" href="css/mainstylesheet.css"/&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+      &lt;div class="container"&gt;	
+         &lt;div class="redbox"&gt;
+            &lt;div class="bluebox"&gt;&lt;/div&gt;
+            &lt;div class="greenbox"&gt;&lt;/div&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+&lt;/html&gt;
+					</div>	
+				</div>
+
+				<div class="plus-sign"></div>
+
+				<div class="example small"><div class="codetitle">CSS</div>
+					<div class="threecol csscode">
+.container {
+	height: 500px;
+	width: 600px;
+	background-color: dimgrey;
+	margin: auto;
+}
+					</div>
+
+					<div class="threecol csscode">
+.redbox {
+	height: 300px;
+	width: 300px;
+	background-color: red ;
+	position: relative;
+}
+					</div>
+
+					<div class="threecol csscode">
+.bluebox {
+	height: 100px;
+	width: 100px;
+	background-color: blue ;
+	position: absolute;
+	left: 20px;
+}
+					</div>
+
+					<div class="threecol csscode">
+.greenbox {
+	height: 100px;
+	width: 100px;
+	background-color: green ;
+	position: absolute;
+}
+					</div>
+				</div>
+
+				<div class="equals-sign"></div>
+
+				<div class="example medium"><div class="codetitle browser">BROWSER</div><div class="insidebox">
+					<div class="xcontainer">	
+						<div class="xredbox xrelative">
+							<div class="xbluebox xabsolute xleft20">Left:20px</div>
+							<div class="xgreenbox xabsolute"></div>
+						</div>
+					</div>
+				</div></div>
+
+				<div class="onecol">
+					<p>
+						This can be very confusing when you are learning. Later on you will begin to see applications for this kind of behavior, mostly when you are designing reactive layouts where objects need to stay at set distances apart and not squish and cover each other, even as other elements are stretching and moving to react to screen size. Mostly now its important to understand how absolute elements react to movement commands so you can properly move around elements on your site that you don't want interacting with their background, without being all confused when you tell them to move left:20px and they shoot off to the edge of the screen.
+					</p>
+				</div>
+
+
+
+
+
+				
+			</div><!-- End Midwrap -->
+		</div><!-- End Fullwrap -->
+	</body>
+
+</html>
